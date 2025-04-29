@@ -1,3 +1,7 @@
+Compatibility Lists (looking for saved presets to add to this archive) 
+Start here - https://docs.google.com/spreadsheets/d/1-I8SkhBr5cNHcXZYPw9zsjQr0vKxePjvLsfvtgqzYf4/edit?gid=0#gid=0
+Backup settings to test - https://docs.google.com/spreadsheets/d/1i4zpnJkf5mlEeypdcN-ve9Fm7euKOH7Lwerzq9_LdP8/edit?gid=1719450497#gid=1719450497
+
 # Dreamcast GDI Image Batch Converter
 
 A comprehensive solution for converting Dreamcast GDI images from redump.org format to General GDI format compatible with Optical Drive Emulators like GDEMU.
