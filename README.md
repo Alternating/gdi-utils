@@ -1,3 +1,102 @@
+# Dreamcast GDI Image Batch Converter
+
+A comprehensive solution for converting Dreamcast GDI images from redump.org format to General GDI format compatible with Optical Drive Emulators like GDEMU.
+
+## Features
+
+- Batch processing of multiple Dreamcast GDI images
+- Intelligent detection of previously processed games
+- Detailed logging of conversion process
+- Automatic optimization of converted images
+- Audio notifications for successful or failed operations
+
+## Requirements
+
+- Windows 10/11
+- PowerShell 5.1 or higher
+- Node.js installed and accessible from command line
+- GDI-utils package properly installed and compiled
+
+## Installation
+
+1. Place all files in a single directory:
+   - `BulkGDIConverter.ps1` (PowerShell script)
+   - `RunGDIConverter.bat` (Batch launcher)
+   - `gdiopt-v2.exe` (GDI optimizer utility)
+
+2. Ensure GDI-utils is properly installed with the compiled index.js file accessible.
+
+3. Update the default paths in `RunGDIConverter.bat` to match your environment:
+
+```batch
+set SOURCE_PATH=M:\Games2\Dreamcast
+set DEST_PATH=M:\Games
+set GDI_UTILS_PATH=C:\Users\YourUsername\Documents\gdi-utils\bin\bin-nodejs\index.js
+```
+
+## Usage
+
+1. Double-click `RunGDIConverter.bat` to start the conversion process.
+2. Accept the default paths or enter custom paths when prompted.
+3. The script will:
+   - Scan source directory for game folders
+   - Skip already processed games
+   - Convert new games to General GDI format
+   - Run optimization on all processed games
+   - Create a detailed log file in the destination directory
+   - Play a sound notification based on the result
+
+## Audio Notifications
+
+- `chimes.wav` (C:\Windows\Media\chimes.wav) - Played when conversion completes successfully
+- `chord.wav` (C:\Windows\Media\chord.wav) - Played when errors occur or no files are processed
+
+## Log File
+
+A log file named `conversion_log.txt` is created in the destination directory, containing:
+- List of all folders processed and skipped
+- Details of any errors encountered
+- Summary statistics of the conversion process
+
+## Workflow
+
+1. **Initial Setup**: Configure paths in the batch file
+2. **First Run**: Process all existing games
+3. **Subsequent Runs**: Only new games will be processed, with existing ones skipped
+4. **Verification**: Check the log file to confirm successful processing
+
+## Troubleshooting
+
+- Ensure Node.js is properly installed and accessible from command line
+- Verify that GDI-utils is correctly compiled and the path to index.js is correct
+- Check that source and destination paths exist and are accessible
+- Examine the log file for detailed error information
+
+## Directory Structure
+
+Recommended structure for optimal operation:
+
+```
+C:\Users\YourUsername\Documents\gdi-utils\
+├── BulkGDIConverter.ps1
+├── RunGDIConverter.bat
+├── gdiopt-v2.exe
+└── bin\
+    └── bin-nodejs\
+        └── index.js (GDI-utils compiled output)
+```
+
+## Notes
+
+- The source directory should contain folders with GDI images in redump.org format
+- Each game folder should contain a .gdi file along with its associated track files
+- The script creates temporary processing folders that are automatically cleaned up
+- The GDI optimizer improves compatibility with various ODE devices
+
+---
+
+This tool significantly streamlines the process of preparing Dreamcast games for use with modern ODE solutions, saving time and ensuring consistent results across large game collections.
+
 # GDI-Utils
 A converter for converting GDI image in redump.org format to General GDI image format.
 
